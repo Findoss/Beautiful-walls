@@ -1,5 +1,5 @@
 node_modules
-.env
-.env.dev
-db*
+.env*
+!.env.example
+db.*.json
 .vscode

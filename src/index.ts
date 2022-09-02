@@ -7,10 +7,11 @@ import { addChenal, removeChenal, listChenal } from './controllers/chenal';
 import { brodcast } from './services/brodrcast';
 
 bot.command('start', start);
+console.log('start bot');
 
 bot.command('add', addChenal);
 bot.command('remove', removeChenal);
-bot.command('chenals', listChenal);
+bot.command('list', listChenal);
 
 bot.on('message:photo', async (ctx) => {
   const { caption } = ctx.message;
