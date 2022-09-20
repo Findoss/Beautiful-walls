@@ -24,8 +24,6 @@ export const brodcast = (rawMessage: State) => {
     return acc;
   }, []);
 
-  // console.log(message);
-
   listChenal.forEach((idChenal) => {
     bot.api.sendMediaGroup(idChenal, message);
   });
