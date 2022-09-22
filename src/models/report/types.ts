@@ -5,6 +5,7 @@ export type UserId = number;
 export type Report = {
   imgs: Img[];
   text: Text;
+  user: Text;
 };
 
 export type SessionReport = Report & {
