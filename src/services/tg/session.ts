@@ -1,18 +1,21 @@
 import type { Context } from 'grammy';
-import type { Report } from '../../models/report/types';
 
 import { debounce } from 'lodash';
 import { MyContext } from './types';
-import { sendReport } from '../../controllers/report';
+
+import type { SessionReport } from '../../models/report/types';
+import { controllerMedia } from '../../controllers/report';
 
 export const getSessionKey = (ctx: Context): string | undefined => {
   return ctx.chat?.id.toString();
 };
 
-export const createSession = (): Report => ({
+const DEBOUNCE_INTERVAL = 700;
+
+export const createSession = (): SessionReport => ({
   imgs: [],
   text: '',
-  check: debounce((ctx: MyContext) => {
-    sendReport(ctx);
-  }, 10000),
+  debounceControllerMedia: debounce((ctx: MyContext) => {
+    controllerMedia(ctx);
+  }, DEBOUNCE_INTERVAL),
 });

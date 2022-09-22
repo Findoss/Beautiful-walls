@@ -5,5 +5,8 @@ export type UserId = number;
 export type Report = {
   imgs: Img[];
   text: Text;
-  check: any;
+};
+
+export type SessionReport = Report & {
+  debounceControllerMedia: any;
 };
