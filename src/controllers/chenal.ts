@@ -12,12 +12,12 @@ export const addChenal: CommandMiddleware<Context> = (ctx) => {
   const listChenal = selectAllChenals();
 
   if (listChenal.findIndex((v) => v === id) !== -1) {
-    ctx.reply('канал уже ЕСТЬ в рассылке');
+    ctx.reply('Канал уже ЕСТЬ в рассылке');
     return;
   }
 
   storeAddChenal(ctx.chat.id);
-  ctx.reply('канал добавлен в рассылку');
+  ctx.reply('Канал добавлен в рассылку');
 };
 
 export const removeChenal: CommandMiddleware<Context> = (ctx) => {
@@ -25,9 +25,9 @@ export const removeChenal: CommandMiddleware<Context> = (ctx) => {
 
   if (selectHasChenal(id)) {
     storeRemoveChenal(id);
-    ctx.reply('канал удален из рассылки');
+    ctx.reply('Канал удален из рассылки');
   } else {
-    ctx.reply('канала нет в рассылки');
+    ctx.reply('Канала нет в рассылки');
   }
 };
 
@@ -37,6 +37,6 @@ export const listChenal: CommandMiddleware<Context> = (ctx) => {
   if (!selectEmptyChenal()) {
     ctx.reply(JSON.stringify(listChenal, null, 2));
   } else {
-    ctx.reply('в рассылке нет каналов');
+    ctx.reply('В рассылке нет каналов');
   }
 };

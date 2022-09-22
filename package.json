@@ -12,6 +12,7 @@
   "author": "Nikita Stroganov",
   "license": "MIT",
   "dependencies": {
+    "@grammyjs/conversations": "^1.0.3",
     "@grammyjs/files": "^1.0.4",
     "@grammyjs/menu": "^1.1.2",
     "cross-env": "^7.0.3",
